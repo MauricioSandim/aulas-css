@@ -18,4 +18,4 @@ class - indicado com `.` no css, pode ser usado em mútiplas partes do html(não
 
 id - dado no html, nomeia um trecho do conteúdo para que ele seja único na estilização, precisa ser indicado com `#` no css (o id não pode ser repetido e nem inciado em um número) 
 
-* - passa o estilo para todas as tags simultaneamente
+\* - passa o estilo para todas as tags simultaneamente
