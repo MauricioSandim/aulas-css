@@ -1,0 +1,28 @@
+body
+{
+    background-color: rgb(197, 193, 193);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 35pt;
+    color: red;
+    text-align: center;
+}
+
+h2
+{
+    font-size: 22pt;
+    color: aqua;
+}
+
+p
+{
+    color: rgb(0, 0, 0);
+}
+
+.center
+{
+    text-align: center;
+}
