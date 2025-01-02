@@ -38,15 +38,15 @@ Também existe o `max-width`, que indica o tamanho máximo que o setor pode ter 
 
 Define o que será mostrado no fundo do site. Ele é indicado por `background-`e o tipo que será atribuído. Os tipos podem ser:
 
-color - para definir uma cor 
+`color` - para definir uma cor 
 
-image - para definir uma imagem. A indicação da imagem deve ser feita por `url("local da imagem")`
+`image` - para definir uma imagem. A indicação da imagem deve ser feita por `url("local da imagem")`
 
-size - usado para definir o preenchimento da imagem no fundo. Pode ser do tipo `contain`, que mantém a imagem nas suas proporções originais, criando um mosaico para preenchimento, ou `cover`, que esticará a imagem para ela se adaptar ao espaço que deve ser preenchido
+`size` - usado para definir o preenchimento da imagem no fundo. Pode ser do tipo `contain`, que mantém a imagem nas suas proporções originais, criando um mosaico para preenchimento, ou `cover`, que esticará a imagem para ela se adaptar ao espaço que deve ser preenchido
 
-repeat - controla a repetição do elemento(imagem) utilizado para preencher o fundo. Pode ser do tipo `no-repeat`, em que não haverá repetição, do tipo `repeat`, em que haverá repetição e dos tipos `repeat-x` e `repeat-y`, em que haverá repetição no respectivo eixo
+`repeat` - controla a repetição do elemento(imagem) utilizado para preencher o fundo. Pode ser do tipo `no-repeat`, em que não haverá repetição, do tipo `repeat`, em que haverá repetição e dos tipos `repeat-x` e `repeat-y`, em que haverá repetição no respectivo eixo
 
-position - controla a posição do elemento(imagem) dentro do setor. Pode ser do tipo `center`, para centralizar, `top` para colocar no topo, `bottom`, para colocar no final, `right`, para direita, e `left`, para a esquerda
+`position` - controla a posição do elemento(imagem) dentro do setor. Pode ser do tipo `center`, para centralizar, `top` para colocar no topo, `bottom`, para colocar no final, `right`, para direita, e `left`, para a esquerda
 
 Para facilitar o processo, é possível colocar o color, imagem, repeat e position todos dentro de um único `background`, bastando separálos por espaços. Ex.: `background: cor url(localdaimagem) tipoderepetição posição;`
 
