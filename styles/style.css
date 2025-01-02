@@ -1,14 +1,13 @@
 body
 {
-    background-color: rgb(197, 193, 193);
+    background-color: rgb(249, 245, 231);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1
 {
-    font-size: 35pt;
-    color: red;
-    text-align: center;
+    background-color: chartreuse;
+    width: 300px;
 }
 
 h2
@@ -20,9 +19,113 @@ h2
 p
 {
     color: rgb(0, 0, 0);
+    margin-bottom: 40px;
 }
 
-.center
+.justificado
+{
+    text-align: justify;
+    width: 400px;
+}
+
+.center, .title
 {
     text-align: center;
+}
+
+.title
+{
+
+    font-size: 35pt;
+    color: red;
+}
+
+#p-vermelho
+{
+    color: red;
+}
+
+.botao
+{
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 34%;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.botao:hover
+{
+    background-color: red;
+    color: white;
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 34%;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+a.botao1
+{
+    color: white;
+    background-color: aqua;
+    padding: 20px;
+    text-decoration: none;
+    border: 3px solid blue;
+    border-radius: 10px;
+}
+
+a.botao1:hover /* troca de cor */
+{
+    background-color: blue;
+    border-color: aqua;
+    padding: 22px;
+}
+
+a.botao2
+{
+    padding: 20px;
+    border: 3px double blue;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a.botao2:hover /*preenchimento*/
+{
+    background-color: blue;
+    color: white;
+}
+
+a.botao3
+{
+    text-decoration: none;
+    color: black;
+}
+
+a.botao3:hover /*linha em baixo*/
+{
+    color: red;
+    border-bottom:solid black ;
+}
+
+a.botao4
+{
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+}
+
+a.botao4:hover /*colocar em negrito*/
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a.botao5 /*mudança de cursor*/
+{
+    cursor: none;
 }
