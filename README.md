@@ -44,7 +44,7 @@ Define o que será mostrado no fundo do site. Ele é indicado por `background-`e
 
 `size` - usado para definir o preenchimento da imagem no fundo. Pode ser do tipo `contain`, que mantém a imagem nas suas proporções originais, criando um mosaico para preenchimento, ou `cover`, que esticará a imagem para ela se adaptar ao espaço que deve ser preenchido
 
-`repeat` - controla a repetição do elemento(imagem) utilizado para preencher o fundo. Pode ser do tipo `no-repeat`, em que não haverá repetição, do tipo `repeat`, em que haverá repetição e dos tipos `repeat-x` e `repeat-y`, em que haverá repetição no respectivo eixo
+`repeat` - controla a repetição do elemento(imagem) utilizado para preencher o fundo. Pode ser do tipo `no-repeat`, em que não haverá repetição, do tipo `repeat`, em que haverá repetição, e dod tipos `repeat-x` e `repeat-y`, em que haverá repetição no respectivo eixo
 
 `position` - controla a posição do elemento(imagem) dentro do setor. Pode ser do tipo `center`, para centralizar, `top` para colocar no topo, `bottom`, para colocar no final, `right`, para direita, e `left`, para a esquerda
 
@@ -56,7 +56,7 @@ Indicado por `border`, adiciona uma borda no setor. É preciso indicar a espessu
 
 Caso queira que a borda apareça somente em uma dos lados, é possível colocar depois do `border` um `-lado`. Ex.: `border-top`, `border-bottom`, `border-right` e `border-left`
 
-Caso queira deixar a borda arredondada, é possível usar o `border-radius` com o quando ele será arredondado em porcentagem ou pixels
+Caso queira deixar a borda arredondada, é possível usar o `border-radius` com o quando ele será arredondado em pixels
 
 ### Magin
 
@@ -72,7 +72,7 @@ Indicado por `padding`, funciona como uma margem, mas ao ínves de só afastar o
 
 Pode ser prosseguido por `-top`, `-bottom`, `-right` ou `-left` para indicar a posição da preenchimento
 
-Tambem pode ser organizado dentro da própria `padding` colocando cada distância com referência no sentido horário. EX.: `padding: cima direita baixo esquerda`. caso seja específicado somente um valor, todas as direções receberam o preenchimento referente a ele  
+Tambem pode ser organizado dentro da própria `padding` colocando cada distância com referência no sentido horário. EX.: `padding: cima direita baixo esquerda`. Caso seja específicado somente um valor, todas as direções receberam o preenchimento referente a ele  
 
 ### Text
 
@@ -107,6 +107,50 @@ Indicado por `font-`, define características da fonte utilizada nos textos. Pod
 `weight` - define a grossura da fonte, podendo ser indicada por um valor ou pelo `bold` para que ela fique em negrito
 
 Para adicionar uma fonte externa vinda do google fontes no projeto, basta entrar na fonte desejada, ir na parte de import, colocar o parte precedida pelo @ dentro no início do arquivo css e depois chamar a fonte no family com o nome indicado no site. Lemrbrando que fonte possui direitos autorais, mas as do google podem ser usadas sem problemas
+
+### Display
+
+Indicado por `display`, define o comportamento do setor em relação relação às suas características e aos outros elementos da página. Possui quatro tipos principais:
+
+`none` - o elemento não é mostrado
+
+`inline` - os elementos se comportam como parte de uma única linha com caracteríscas de formatação definidas, tais como margem e tamanho, se adaptando somente ao tamanho do conteúdo. Além disso, como todos os elementos fazem parte da mesma linha, elas são mostradas de forma seguida (uma alinhada à outra)
+
+`block` - os elementos se comportam como parte de um bloco separado que pode assumir características próprias de formatação, controlando margens e tamanho, sendo não só possível, mas também necessário em alguns casos, uma vez que o tipo block possui algumas configurações que nem sempre se encaixam no necessário para a página, como a largura em 100%. Devido ao fato de o bloco estar isolado em relação aos outros elementos, há uma quebra de linha padrão para o próximo elemento
+
+`inline-block` - mistura características dos dois elementos, permitindo que seja feita a formatação do setor, mas também que eles possam ser alinhados
+
+As tags já possuem um tipo de display padronizado, mas que pode ser modificado a depender da necessidade. Dentre as tags em block se destacam os titulos(h), parágrafos(p), tags semanticas como header, section e footer, entre outras. Dentre tags com inline estão o de links(a), imagens(img) entre outros
+
+### Z-Index
+
+Indicada por `z-index`, define a prioridade do setor em relação a sobre posição dos elementos, indo de -1 até 999, em que quanto maior for, maior a preferência para o elemento se sobrepor ao outro
+
+### Position
+
+Indicada por `position`, ela define ela posição do elemento em relação a algo, determinado pelo tipo, que pode ser:
+
+`static` - em que ele não se move, fica na sua posição original
+
+`relative` - em que ele se move em relação à sua posição original, sendo este deslocamneto determinado pelas propriedades `top`, `right`, `bottom` e `left`
+
+`fixed` - matém o elemento em uma determinada posição independente da rolagem. Útil para fazer cabeçalho fixo ou botão de "entre em contato". É também possível deslocá-lo de sua posição original utilizando as propriedades `top`, `right`, `bottom` e `left`, mas nesse casso, a posição é relativa a tela
+
+`absolute` - a posição do elemento é dada em relação ao setor que está inserido, determinado pelas propriedades `top`, `right`, `bottom` e `left`. Ex.: h1 dentro do body: a posição será relativa ao body; p dentro de div, a posição será dada em relação à div; div2 dentro da div1, a posição será dada em relação à div1. Para o funcionamento adequando do absolute, o setor acima do que está sendo usado não pode ser do tipo static, caso seja, a posição do elemento será dada em relação ao primeiro não static da que aparecer na hierarquia
+
+`stick` - acompanha a rolagem, mas ficando sempre dentro do espaço definido em que está inserida
+
+### Overflow
+
+Indicada por `overflow`, define como a ocorrerá a visibilidade do conteúdo quando ele não se adequa à altura do setor. Possui vários tipos, como `visible`, em que o conteúdo é mostrado mesmo que vá além da altura definida, `hidden`, em que o conteúdo que fica para fora do espaço estipulado é escondido, `scroll`, em que adiciona uma barra de rolagem no setor para que o conteúdo possa ser visto, e, por fim, o `auto`, que se assemelha ao scroll, mas só o cria quando é necessário
+
+A propriedade overflow só tem função quando o setor recebe uma definição para sua altura
+
+O overflow também é utilizado para definir a existência ou não da barra de rolagem na página, isso por meio das prorpriedade `overflow-y` e `overflow-x`, que controlará a barra de rolagem do respectivoo eixo. Para faze-lá sumir, basta usar o parâmetro hidden
+
+### Float
+
+Indicado por `float`, define um setor como não pertencente ao fluxo comum da página 
 
 ## Botões
 
