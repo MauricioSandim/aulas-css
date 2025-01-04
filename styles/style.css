@@ -36,6 +36,7 @@ h2
     display: inline-block;
     right: 30px;
     width: 45%;
+    clear: both;
 }
 
 .botao
@@ -128,4 +129,34 @@ a.botao4:hover /*colocar em negrito*/
 a.botao5 /*mudança de cursor*/
 {
     cursor: none;
+}
+
+ul
+{
+    background: black;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li
+{
+    display: inline-block;
+}
+
+li a
+{
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover
+{
+    background: red;
+}
+
+sla a
+{
+    display: inline;
 }

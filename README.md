@@ -150,7 +150,29 @@ O overflow também é utilizado para definir a existência ou não da barra de r
 
 ### Float
 
-Indicado por `float`, define um setor como não pertencente ao fluxo comum da página 
+Indicado por `float`, define um setor como não pertencente ao fluxo comum da página, isolando-o no canto esquerdo ou direito, fazendo com que os demais itens se adequem ao espaço que sobra do lado
+
+Caso queira que o fluxo normal seja retomado depois de um certo ponto, é possível usar a tag `clear:both` dentro do setor que retomará o fluxo
+
+### Opacity
+
+Indicado por `opacity`, controla a opacidade do conteúdo. Ela vai de 0.0 até 1.0, sendo 1.0 o 100% e 0.0 o 0%. Útil para efeito de transparência e criação de botões
+
+## Efeito dropdown
+
+O efeito dropdown é a aquele em que um item de uma navbar se expande ao passar com o cursor do mouse por cima
+
+Para fezê-lo usando somente css existem algumas dicas:
+
+* quando se colococa uma tag/classe/id em frente a um `setor:hover` somente com um espaço seperando-os, ao passar o ponteiro pelo setor, a ação será feita no setor que está na sequência. A ideia é usar esse mecanismo para trocar o diplay de none para algum que corresponda a necessidade do dropdown (geralmente block) 
+
+* o position dos li's usados para criar a navbar deve ser se algum tipo diferente do static (geralmente relative), isso porque o tipo da ul pertencente ao li que chamará o menu deve ser absolute, já que sua posição deve ser dada em relação à este li
+
+* O top do ul com os conteúdos do dropdown deve ser de 100%, isso para que ele sempre seja mostrado diretamente a baixo do li que o chamará. O left deverá ser 0, uma vez que o li e o ul devem estar alinhados
+
+* é interessantes que todos os li's da navbar tenham o mesmo tamanho, pois além de deixa-lá mais bonita, garante que os itens do dropdown também fiquem alinhados com o li que o chama
+
+* o ul que será mostrado no dropdown deve ter margin e padding iguais a 0, pois, caso contrário, os itens não ficarão alinhados 
 
 ## Botões
 
