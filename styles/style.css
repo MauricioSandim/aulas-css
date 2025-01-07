@@ -160,3 +160,50 @@ sla a
 {
     display: inline;
 }
+
+.card
+{
+    width: 350px;
+    height: auto;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.card
+{
+    position: relative;
+}
+
+/* .card #imagem
+{
+    background-image: url(https://picsum.photos/300/200);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin-top: 25px;
+    margin: 25px;
+} */
+
+.card img
+{
+    margin: 25px;
+}
+
+.card h2
+{
+
+    /* margin: 0;
+    padding: 0; */
+}
+
+.red
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card:hover .red
+{
+    white-space: normal ;
+}

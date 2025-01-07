@@ -158,6 +158,20 @@ Caso queira que o fluxo normal seja retomado depois de um certo ponto, é possí
 
 Indicado por `opacity`, controla a opacidade do conteúdo. Ela vai de 0.0 até 1.0, sendo 1.0 o 100% e 0.0 o 0%. Útil para efeito de transparência e criação de botões
 
+### Text shadow e Box shadow 
+
+Indicada por `text-shadow`, define um sombreamento para um texto. Seus parâmetros são definidos todos na mesma linha e os dois primeiros defininem a distância no eixo x e y, em px, o próximo é o blur/desfoque, também em px, e a cor. Algumas dicas referentes ao text shadow são: usar o efeito com distânciamento em 0 para criar um desfoque, adicionar mais de um efeito ao parâmetro separando eles por sombre e também procurar alguns efeitos já prontos na internet para implementar ou usar de inspiração
+
+Indicada por `box-shadow`, funciona da mesma maneita que o text shadow, mas seu efeito é aplicado em um setor inteiro. Uma dica de uso para o box shadow é a criação de cards usando `box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)`. Esse uso do box shadow é praticamente um padrão. Para o box shadow também é útil pesquisas na internet para se implementar ou se inspirar
+
+## Botões
+
+Para criar botões com links é possível utilizar o `:hover` após a indicação do setor para que ele tenha uma mudança quanto o ponteiro do mouse está por cima dele. 
+
+Grafia: `setor:hover {}`
+
+Ex: mudar de cor, aumentar o tamanho, prencher o espaço com cor, sublinhar etc
+
 ## Efeito dropdown
 
 O efeito dropdown é a aquele em que um item de uma navbar se expande ao passar com o cursor do mouse por cima
@@ -174,11 +188,72 @@ Para fezê-lo usando somente css existem algumas dicas:
 
 * o ul que será mostrado no dropdown deve ter margin e padding iguais a 0, pois, caso contrário, os itens não ficarão alinhados 
 
-## Botões
+## Especificidade 
 
-Para criar botões com links é possível utilizar o `:hover` após a indicação do setor para que ele tenha uma mudança quanto o ponteiro do mouse está por cima dele. 
+Especificidade se refere a como os CSS organiza a hierarquia das estilizações e qual vai ser lida pelo navegador
 
-Grafia: `setor:hover {}`
+O primeiro tipo que vem na hierarquia é o inline, aquele que em que o style é colocado diretamente na tag, seguido então do interno e por último do externo
 
-Ex: mudar de cor, aumentar o tamanho, prencher o espaço com cor, sublinhar etc
+Porém, quando há uma class, ela possui uma hierarquia superior aos tipos interno e externo, então mesmo que estilo da class esteja sendo definido num arquivo externo, a class vai se sobrepor. Em resumo, a classe tem uma hierarquia superior à qualquer seletor simples (h1, p etc)
 
+A mesma situação vale para os id's, que sobrepõem a tudo, então, na hierarquia: id > class > seletor simples, independente de uma ser interno e o outro ser externo
+
+Resumindo: inline > id > seletor simples com classe > classe > seletor simples, em que caso algum eles se repita em no externo e no interno, o interno prevalece
+
+## Regra important 
+
+Caso coloque `!important` entre o : e ; de uma estilização, ela irá ignorar as regras de especificidade e prevalecerá na hierarquia. Essa regra pode ser uso para casos pontuais, mas é remondável que se evite o uso dela, uma vez que o cógigo pode se tornar extremamente confuso com o abuso desse recurso
+
+## Efeito de gradiente
+
+Para criar uma efeito de gradiente para o background utiliza-se o parâmetro `background-image: linear-gradient(direção, cor1, cor2, cor...)`. A direção pode ser definida pelo ângulo, com o valor seguido por deg, ou por indicação verbal, com 'to' seguido da direção em inglês, podendo ser colocada um direção do eixo x e outra do y para indicar uma diagonal
+
+Também existe gradiente radial, que é definido por `background-image: radial-gradient(cor1, cor2, cor...)`
+
+É possível adicionar um valor em porcentagem após cada cor para definir até que ponto ela ocupará na tela
+
+## Dicas para efeitos de texto
+
+É muito normal que falte espaço para terminados texto em setor, sendo necessário então algumas adaptações para que a leitura do site não seja prejudicada
+
+Dentre alguma delas estão o uso da propriedade `white-space: nowrap;` que configura os texto para que ele não faça uma quebra de linha. Essa propriedade somada a um overflow do tipo hidden já faz que com que o texto grande não ocupe todo o espaço em disponível. Entretanto, ao utilizar esse método, o recorte entre a parte que é mostrada e a que não é do conteúdo fica brusco e estranho. Para melhorar essa situação é possível utilizar a propriedade `text-overflow: ellipsis`, que adicionará reticências antes do recorte, gerando um efeito visual melhor
+
+Quando esse método é utilizado em cards, também é possível utilizar a propriedade o hover para modificar as propriedades do texto e do próprio card para tornálo dinâmico, com o seu tamanho se expandindo para mostrar todo seu conteúdo. Exemplo disso é deixar o `height: auto;` para que o card se adapte ao conteúdo e também usar o `white-space: normal;`, para que todo o conteúdo seja mostrado normalmente
+
+## Media Queries
+
+Media queries é um dos recursos/conceito mais importantes dentro do css. Sua função consite em definir determinados comportamentos para o site a depender do tipo de dispositivo em que o ele será exibido e o seu tamanho. O principal exemplo do uso de media queries está na adaptação de sites para que eles funcionem bem em dispositivos com diferentes tamanhos de telas, como celulares, tablets e computadores.
+
+Alguns exemplos de parâmetros de media queries que são usados para tornar o site responsivo em diferentes dispositivos 
+
+* Smartphones (600px para baixo): `@media only screen and (max-width: 600px) {...}`
+
+* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima): `@media only screen and (min-width: 600px) {...}`
+
+* Dispostivos Médios (Tablets deitados, 768px para cima): `@media only screen and (min-width: 768px) {...}`
+
+* Dispostivos Largos (laptops/desktops, 992px para cima): `@media only screen and (min-width: 992px) {...}` 
+
+* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima): `@media only screen and (min-width: 1200px) {...}`
+
+## Flexbox
+
+Flexbox é um display extremamente útil, pois ele pode se configurado para se adaptar à diferentes dituações de tamnaho de tela. Para usar o flexbox basta colcar o parâmentro `display: flex;` para o setor
+
+O tipo flex aceita uma série de outros parâmentros como:
+
+`flex-direction` - que define a maneita de como o item estará disposto na página. Existem vários tipos, como `column` em que sua disposição ocorre ocupando toda à coluna diponível, semelhante ao tipo block. Existe também o `row`, que dispõe o conteúdo ao decorrer da linha, tal como o tipo inline-block. Também é possível adicionar um `-reverse` após o tipo para que mude o direcionamento padrão, em ao invés de ser da esquerda para direita, seria da direita para esquenda por ex
+
+`flex-wrap` - define a quebra de linha ao fim da página para o setor. Por padrão, o tipo definido para wrap é o `nowrap`, em que não há quebra de linhas, porém, ao utilizar `wrap` ele fará a quebra de linha de acordo com o necessário para o tamanho do dispositivo
+
+`flex-flow` - é uma junção das duas anteriores, em que basta colcocar primeiro o parâmetro do direction e depois o wrap separado por espaço
+
+`justify-content` - controla o alinhamento horizontal dos itens. Possuem vários tipos, mas os principais são: `flex-start`, que faz o alinhamento à direita, `flex-end`, que faz o alinhamento a esquerda, `center`, que centraliza os itens, `space-between`, que matém todos numa mesma distância ocupando toda a largura disponível, e `space-around`, que cria um espaçamento uniforma em volta dos elementos
+
+`align-items` - controla o alinhamento vertical dos itens. Possuem vários tipos, mas os principais são: `flex-start`, que faz o alinhamento à cima, `flex-end`, que faz o alinhamento em baixo, e `center`, que centraliza os itens
+
+`align-content` - funcioo como o align items, porém atua de forma a tentar manter juntos todos os elementos, enquanto o de item espalha o conteúdo ao redor do espaço para ocupá-lo com o tipo de alinhamento
+
+`flex-grow` - colocado dentro dos setores de uma div principal, estipula a varição de crecimento desses setores em relação aos outros, com o valor dado sendo uma relação de multiplicação do valor 
+
+`flex` - colocado dentro dos setores de uma div principal, define a porcentagem do espaço que utilizará para dispor o conteúdo. Por meio desse parâmetro é possível configurar um grid para disposição do conteúdo
